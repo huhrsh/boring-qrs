@@ -106,15 +106,15 @@ export default function HomePage() {
   }
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10">
+    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-10">
       {/* Hero */}
-      <div className="text-center mb-8 sm:mb-12">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight px-2">
+      <div className="text-center mb-6 sm:mb-8 lg:mb-12">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight px-2">
           Create QR Codes That
           <br className="hidden sm:block" />
           <span className="text-cyan-200"> Actually Look Good</span>
         </h2>
-        <p className="text-base sm:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed px-2">
+        <p className="text-sm sm:text-base lg:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed px-2">
           Free, no-login QR generator. Blend images, pick colors, download instantly.
           <br className="hidden sm:block" />
           All processing happens in your browser.
@@ -122,7 +122,7 @@ export default function HomePage() {
       </div>
 
       {/* Main Content */}
-      <div className="w-full grid lg:grid-cols-2 gap-5 sm:gap-8">
+      <div className="w-full grid lg:grid-cols-2 gap-4 sm:gap-5 lg:gap-8">
         {/* Left Column: Input Controls */}
         <div className="w-full space-y-5">
           <div className="w-full bg-white/95 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-2xl border border-white/50 p-4 sm:p-6 lg:p-8">
@@ -224,9 +224,9 @@ export default function HomePage() {
       </div>
 
       {/* Example gallery */}
-      <section className="mt-12 sm:mt-16 mb-8 sm:mb-12">
-        <div className="mb-6 sm:mb-8 text-center">
-          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+      <section className="mt-8 sm:mt-12 lg:mt-16 mb-6 sm:mb-8 lg:mb-12">
+        <div className="mb-4 sm:mb-6 lg:mb-8 text-center">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 sm:mb-3">
             What You Can Create
           </h3>
           <p className="text-sm sm:text-base text-white/80 max-w-2xl mx-auto">

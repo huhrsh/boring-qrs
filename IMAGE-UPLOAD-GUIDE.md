@@ -11,7 +11,8 @@ All files go in the **`public`** folder at the root of your project:
 ```
 artistic-qr/
 ├── public/
-│   ├── logo.png          ← Upload your logo here
+│   ├── favicon.png       ← Upload your favicon here (browser tab icon)
+│   ├── logo.png          ← Upload your logo here (header logo)
 │   └── examples/
 │       ├── qr-portrait.png    ← Upload example 1 here
 │       ├── qr-landscape.png   ← Upload example 2 here
@@ -21,6 +22,17 @@ artistic-qr/
 ---
 
 ## 🎯 Exact Filenames Required
+
+### Favicon (Browser Tab Icon)
+**Upload:**
+- `favicon.png` (required)
+
+**Specs:**
+- Recommended size: 64×64px or 48×48px (square)
+- PNG format with transparency
+- Will appear in browser tab, bookmarks, and mobile shortcuts
+
+---
 
 ### Logo (Header)
 **Upload ONE of these:**
@@ -100,7 +112,14 @@ Then check:
 
 ---
 
-## 💡 Tips
+##Favicon not showing?**
+- Check filename is exactly `favicon.png` (lowercase)
+- Check it's in `/public/` not `/public/examples/`
+- Restart dev server completely
+- Hard refresh browser (Ctrl+Shift+R) or clear cache
+- Close and reopen browser tab
+
+** 💡 Tips
 
 - **PNG is best** for QR codes (supports transparency, crisp edges)
 - **Keep file sizes small** (<500KB) for fast loading
@@ -119,12 +138,14 @@ Then check:
 **Example QRs not showing?**
 - Check filenames match exactly (e.g., `qr-portrait.png`, `qr-landscape.png`)
 - Check they're in `/public/examples/` folder
-- Verify images are square (same width/height)
-- Hard refresh browser
-
----
-
-## 📋 Quick Checklist
+- VeriFavicon uploaded to `/public/favicon.png`
+- [ ] Logo uploaded to `/public/logo.png`
+- [ ] Portrait QR uploaded to `/public/examples/qr-portrait.png`
+- [ ] Landscape QR uploaded to `/public/examples/qr-landscape.png`
+- [ ] Brand QR uploaded to `/public/examples/qr-brand.png`
+- [ ] Dev server restarted
+- [ ] Browser hard refreshed (Ctrl+Shift+R)
+- [ ] Browser tab closed and reopened (for favicon)
 
 - [ ] Logo uploaded to `/public/logo.png`
 - [ ] Portrait QR uploaded to `/public/examples/qr-portrait.png`

@@ -112,16 +112,16 @@ export default function QRCanvas({
 
   return (
     <div className="w-full flex flex-col items-center space-y-4">
-      <div className="relative bg-white p-4 sm:p-6 rounded-2xl shadow-2xl border-2 border-gray-200 w-full flex justify-center">
+      <div className="relative">
         <canvas
           ref={canvasRef}
-          className="border-2 border-gray-300 rounded-xl max-w-full h-auto"
-          style={{ width: '360px', height: '360px' }}
+          className="border border-gray-300 rounded-lg shadow-sm max-w-full h-auto"
+          style={{ width: '360px', height: '360px', maxWidth: '100%' }}
           width={360}
           height={360}
         />
         {isGenerating && (
-          <div className="absolute inset-0 bg-white/90 backdrop-blur-sm flex items-center justify-center rounded-2xl">
+          <div className="absolute inset-0 bg-white/90 backdrop-blur-sm flex items-center justify-center rounded-lg">
             <div className="flex flex-col items-center gap-3">
               <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-200 border-t-cyan-600"></div>
               <p className="text-sm font-bold text-gray-900">Generating...</p>

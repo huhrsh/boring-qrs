@@ -1,5 +1,12 @@
 # Public Assets
 
+## Favicon (Browser Tab Icon)
+
+Upload your favicon here:
+- **favicon.png** (required - 64×64px or 48×48px square PNG)
+
+This appears in the browser tab, bookmarks, and mobile home screen.
+
 ## Logo
 
 Upload your logo here with one of these filenames:

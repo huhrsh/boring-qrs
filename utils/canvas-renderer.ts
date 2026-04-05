@@ -161,21 +161,65 @@ export function drawLoadingPlaceholder(
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
 
+  // Reset canvas dimensions to base size
+  canvas.width = 360;
+  canvas.height = 360;
+  canvas.style.width = '360px';
+  canvas.style.height = '360px';
+
   const { width, height } = canvas;
   
-  // Clear canvas
+  // Clear and reset transform
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
   ctx.clearRect(0, 0, width, height);
   
-  // Draw background
-  ctx.fillStyle = '#f3f4f6';
+  // Draw subtle background
+  ctx.fillStyle = '#fafafa';
   ctx.fillRect(0, 0, width, height);
   
-  // Draw text
-  ctx.fillStyle = '#6b7280';
-  ctx.font = '16px Arial, sans-serif';
+  // Draw text with proper font matching UI
+  ctx.fillStyle = '#9ca3af';
+  ctx.font = '600 16px system-ui, -apple-system, sans-serif';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillText(message, width / 2, height / 2);
+  
+  // Add padding and proper centering
+  const maxWidth = width - 60;
+  const lines = wrapText(ctx, message, maxWidth);
+  const lineHeight = 20;
+  const totalHeight = lines.length * lineHeight;
+  const startY = (height - totalHeight) / 2 + lineHeight / 2;
+  
+  lines.forEach((line, i) => {
+    ctx.fillText(line, width / 2, startY + i * lineHeight);
+  });
+}
+
+/**
+ * Helper: Wrap text to fit within maxWidth
+ */
+function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number): string[] {
+  const words = text.split(' ');
+  const lines: string[] = [];
+  let currentLine = '';
+  
+  for (const word of words) {
+    const testLine = currentLine + (currentLine ? ' ' : '') + word;
+    const metrics = ctx.measureText(testLine);
+    
+    if (metrics.width > maxWidth && currentLine) {
+      lines.push(currentLine);
+      currentLine = word;
+    } else {
+      currentLine = testLine;
+    }
+  }
+  
+  if (currentLine) {
+    lines.push(currentLine);
+  }
+  
+  return lines;
 }
 
 /**
@@ -188,42 +232,34 @@ export function drawErrorPlaceholder(
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
 
+  // Reset canvas dimensions to base size
+  canvas.width = 360;
+  canvas.height = 360;
+  canvas.style.width = '360px';
+  canvas.style.height = '360px';
+
   const { width, height } = canvas;
   
-  // Clear canvas
+  // Clear and reset transform
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
   ctx.clearRect(0, 0, width, height);
   
   // Draw background
-  ctx.fillStyle = '#fee2e2';
+  ctx.fillStyle = '#fef2f2';
   ctx.fillRect(0, 0, width, height);
   
   // Draw error text
   ctx.fillStyle = '#dc2626';
-  ctx.font = '14px Arial, sans-serif';
+  ctx.font = '600 13px system-ui, -apple-system, sans-serif';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   
   // Word wrap error message
-  const words = error.split(' ');
-  const lines: string[] = [];
-  let currentLine = '';
-  
-  for (const word of words) {
-    const testLine = currentLine + (currentLine ? ' ' : '') + word;
-    const metrics = ctx.measureText(testLine);
-    
-    if (metrics.width > width - 40 && currentLine) {
-      lines.push(currentLine);
-      currentLine = word;
-    } else {
-      currentLine = testLine;
-    }
-  }
-  if (currentLine) lines.push(currentLine);
-  
-  // Draw lines
+  const maxWidth = width - 60;
+  const lines = wrapText(ctx, error, maxWidth);
   const lineHeight = 20;
-  const startY = height / 2 - (lines.length * lineHeight) / 2;
+  const totalHeight = lines.length * lineHeight;
+  const startY = (height - totalHeight) / 2 + lineHeight / 2;
   
   lines.forEach((line, i) => {
     ctx.fillText(line, width / 2, startY + i * lineHeight);

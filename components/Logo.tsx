@@ -13,7 +13,7 @@ export default function Logo() {
   const [imageError, setImageError] = useState(false)
 
   return (
-    <div className={`w-12 h-12 sm:w-14 sm:h-14 relative flex-shrink-0 ${imageError ? 'bg-white/20 rounded-xl' : ''}`}>
+    <div className={`w-12 h-12 sm:w-14 sm:h-14 relative flex-shrink-0 ${imageError ? 'bg-white/20 rounded-xl' : 'bg-white p-1 rounded'}`}>
       {!imageError && (
         <Image
           src="/logo.png"

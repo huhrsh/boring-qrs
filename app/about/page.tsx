@@ -1,3 +1,7 @@
+import { pageMetadata } from '@/lib/site'
+
+export const metadata = pageMetadata('/about', 'About boring qrs — Photo QR Codes by Harsh Jain', 'Learn how boring qrs blends portraits, landscapes, and brand images into QR codes with local browser processing and free PNG export.')
+
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
@@ -9,7 +13,7 @@ export default function AboutPage() {
         <div className="prose max-w-none">
           <p className="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed">
             Completely free, no-login QR code generator. Create artistic QR codes that blend with images while
-            maintaining reliable scanning. All processing happens in your browser – your images never leave your device.
+            preserving important QR patterns. Test every exported design before use. All processing happens in your browser – your images never leave your device.
           </p>
 
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mt-8 mb-4">
@@ -36,7 +40,7 @@ export default function AboutPage() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="font-bold text-cyan-600 text-lg">5.</span>
-                <span><strong className="font-bold">Contrast Enforcement:</strong> Minimum 3:1 contrast ratio for reliable scanning</span>
+                <span><strong className="font-bold">Contrast Enforcement:</strong> Contrast adjustments help preserve readable QR modules; scanning still needs testing</span>
               </li>
             </ol>
           </div>
@@ -47,9 +51,9 @@ export default function AboutPage() {
 
           <div className="grid sm:grid-cols-2 gap-4 mb-6">
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-5 border-2 border-purple-200">
-              <h3 className="font-bold text-gray-900 mb-2 text-base">Free Forever</h3>
+              <h3 className="font-bold text-gray-900 mb-2 text-base">Free to Use</h3>
               <p className="text-sm text-gray-700">
-                No hidden fees, no premium tiers, completely free
+                No payment or subscription required for the current generator
               </p>
             </div>
             <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl p-5 border-2 border-cyan-200">
@@ -102,6 +106,7 @@ export default function AboutPage() {
             </p>
           </div>
 
+<p className="text-gray-700 mt-6">Built by <a href="https://the-portify.vercel.app/huhrsh" className="underline text-indigo-700">Harsh Jain</a>. Optional random-photo requests use external image services. <a href="/privacy" className="underline text-indigo-700">Read the privacy overview</a>.</p>
           <div className="mt-8 text-center">
             <a
               href="/"

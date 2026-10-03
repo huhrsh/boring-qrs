@@ -35,7 +35,7 @@ Overlapping image / photo / picture keywords are consolidated rather than split 
 
 Run npm ci, npm run build, npm run type-check, npm run lint and npm run check:seo. The SEO script inspects all generated public HTML for unique metadata, production canonicals, one H1, indexability, JSON-LD validity, crawlable internal links and every related-product footer link. It also checks sitemap, robots and llms.txt. Run npm run start for the production preview; check desktop and narrow layouts, a guide, the calculator, social image, and a missing URL. The calculator uses pixels / DPI = inches, then inches × 2.54 = cm; it does not certify scan size.
 
-The existing Next.js font integration fetches Plus Jakarta Sans during the build and serves it locally afterward. This requires network access at build time.
+Plus Jakarta Sans is bundled in public/fonts with its SIL Open Font License and loaded with next/font/local. The font is preloaded and served locally; builds do not fetch Google Fonts.
 
 ## Launch and weekly workflow
 

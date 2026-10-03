@@ -1,20 +1,6 @@
 import type { MetadataRoute } from 'next'
-
+import { pages } from '@/lib/content'
+import { siteUrl, updated } from '@/lib/site'
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
-
-  return [
-    {
-      url: `${baseUrl}/`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-  ]
+  return ['/', '/about', ...pages.map(p => `/${p.slug}`)].map(path => ({ url: `${siteUrl}${path}`, lastModified: updated }))
 }

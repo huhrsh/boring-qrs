@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs><linearGradient id="bg"><stop stop-color="#4f46e5"/><stop offset="0.5" stop-color="#9333ea"/><stop offset="1" stop-color="#0891b2"/></linearGradient></defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<g fill="white" font-family="Arial, sans-serif"><text x="80" y="130" font-size="34">boring qrs</text><text x="80" y="255" font-size="68" font-weight="700">Your photo.</text><text x="80" y="340" font-size="68" font-weight="700">Your QR code.</text><text x="80" y="440" font-size="30">Portraits · Landscapes · Brand images</text><text x="80" y="525" font-size="26">Free · No signup · PNG download</text></g>
+<g transform="translate(890 195)" fill="white"><rect width="210" height="210" rx="20" fill="white" fill-opacity="0.14"/><path d="M20 20h65v65H20zm105 0h65v65h-65zM20 125h65v65H20z"/><path d="M35 35h35v35H35zm105 0h35v35h-35zM35 140h35v35H35z" fill="#4f46e5"/><path d="M100 100h25v25h-25zm40 0h20v20h-20zm35 25h15v30h-15zm-70 25h20v40h-20zm35 10h20v30h-20zm35 20h15v10h-15z"/></g></svg>

@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import Logo from '@/components/Logo'
+import Link from 'next/link'
+import { siteUrl } from '@/lib/site'
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -14,30 +16,8 @@ export const metadata: Metadata = {
   title: 'boring qrs – Free QR Code Generator | No Login Required',
   description:
     'Generate stunning QR codes for free – no login, no signup required. Create artistic QR codes with images, stylish custom QR codes, and professional designs. 100% browser-based, privacy-first QR generator.',
-  keywords: [
-    'free qr code generator',
-    'qr code generator free',
-    'no login qr code',
-    'artistic qr code',
-    'boring qrs',
-    'stylish qr code',
-    'image qr code',
-    'custom qr code free',
-    'qr code with photo',
-    'qr code maker',
-    'creative qr code',
-    'branded qr code',
-    'qr generator online free',
-    'no signup qr code',
-    'privacy qr generator',
-    'offline qr generator',
-    'picture qr code',
-    'logo qr code',
-    'marketing qr code',
-    'business qr code',
-  ],
-  authors: [{ name: 'boring qrs' }],
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  authors: [{ name: 'Harsh Jain', url: 'https://the-portify.vercel.app/huhrsh' }],
+  metadataBase: new URL(siteUrl),
   robots: {
     index: true,
     follow: true,
@@ -101,17 +81,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={plusJakarta.variable}>
       <body className="antialiased bg-gradient-to-br from-indigo-600 via-purple-600 to-cyan-500">
+        <a href="#main" className="sr-only focus:not-sr-only focus:block bg-white text-indigo-700 p-3">Skip to content</a>
         <div className="min-h-screen flex flex-col">
           <header className="bg-white/10 backdrop-blur-lg border-b border-white/20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-6">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3">
                 <div className="flex items-center gap-2 sm:gap-3 lg:gap-4">
                   {/* Logo - will show when you upload logo.png to /public folder */}
-                  <Logo />
+                  <Link href="/" aria-label="boring qrs homepage"><Logo /></Link>
                   <div>
-                    <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white tracking-tight">
+                    <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white tracking-tight">
                       boring qrs
-                    </h1>
+                    </p>
                     <p className="text-xs sm:text-sm text-white/90 mt-0.5 sm:mt-1">
                       Free QR generator • No login required
                     </p>
@@ -125,15 +106,17 @@ export default function RootLayout({
             </div>
           </header>
           
-          <main className="flex-1">
+          <main id="main" className="flex-1">
             {children}
           </main>
           
-          <footer className="bg-black/20 backdrop-blur-md border-t border-white/10 mt-auto">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-              <p className="text-center text-xs sm:text-sm text-white/80">
-                 {new Date().getFullYear()} boring qrs • All QR codes generated securely in your browser
-              </p>
+          <footer className="bg-black/20 border-t border-white/20 text-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid md:grid-cols-3 gap-8">
+              <div><Link href="/" className="font-bold text-xl">boring qrs</Link><p className="mt-2 text-sm text-white/90">Photo QR codes, generated in your browser.</p><p className="mt-3 text-sm">Built by <a className="underline" href="https://the-portify.vercel.app/huhrsh">Harsh Jain</a> · <a className="underline" href="https://www.linkedin.com/in/huhrsh/">LinkedIn</a></p></div>
+              <nav aria-label="Footer navigation" className="flex flex-col items-start gap-2 text-sm">
+                <Link href="/qr-code-with-image">Image QR generator</Link><Link href="/portrait-qr-code">Portrait QR codes</Link><Link href="/landscape-qr-code">Landscape QR codes</Link><Link href="/guides">Guides</Link><Link href="/qr-print-size-calculator">Print size calculator</Link><Link href="/about">About</Link><Link href="/privacy">Privacy</Link>
+              </nav>
+              <div className="flex flex-col items-start gap-2 text-sm"><p className="font-bold">More things I’ve built</p><a href="https://the-daylo.vercel.app/">Daylo — habits and progress</a><a href="https://dosia.vercel.app/">Dosia — medicine stock and reminders</a><a href="https://fryly.vercel.app/">Fryly — shared plans and expenses</a><a href="https://the-portify.vercel.app/">Portify — personal portfolios</a></div>
             </div>
           </footer>
         </div>

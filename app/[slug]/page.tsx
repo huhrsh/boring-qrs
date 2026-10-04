@@ -1,9 +1,12 @@
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { notFound } from 'next/navigation'
 import JsonLd from '@/components/JsonLd'
 import PrintSizeCalculator from '@/components/PrintSizeCalculator'
 import { pages } from '@/lib/content'
 import { creator, pageMetadata, siteUrl, updated } from '@/lib/site'
+
+const QRGenerator = dynamic(() => import('@/components/QRGenerator'))
 
 export const dynamicParams = false
 export function generateStaticParams() { return pages.map(p => ({ slug: p.slug })) }
@@ -28,6 +31,7 @@ export default function ContentPage({ params }: { params: { slug: string } }) {
       <p className="text-lg leading-relaxed mb-6">{page.description}</p>
       {page.article && <p className="text-sm text-gray-600 mb-6">By <a href="https://the-portify.vercel.app/huhrsh" className="underline">Harsh Jain</a> · Updated <time dateTime={updated}>{updated}</time></p>}
       <Link href="/#generator" className="inline-block rounded-xl bg-indigo-700 text-white px-6 py-3 font-semibold mb-6">Create your photo QR code</Link>
+      {['fancy-qr-code-generator', 'qr-code-with-image'].includes(page.slug) && <QRGenerator embedded />}
       {page.slug === 'qr-print-size-calculator' && <PrintSizeCalculator />}
       {page.sections.map(([heading, body]) => <section key={heading} className="my-7"><h2 className="text-xl sm:text-2xl font-bold mb-3">{heading}</h2><p className="leading-relaxed">{body}</p></section>)}
       {page.faqs && <section className="my-8"><h2 className="text-2xl font-bold mb-4">Questions and answers</h2>{page.faqs.map(([q, a]) => <details key={q} className="border-b py-4"><summary className="font-semibold cursor-pointer">{q}</summary><p className="mt-3 leading-relaxed">{a}</p></details>)}</section>}

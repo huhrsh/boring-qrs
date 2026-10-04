@@ -260,4 +260,4 @@ For issues, questions, or feature requests, please open an issue on GitHub.
 **Made with ❤️ and QR codes**
 
 ## SEO implementation
-See [SEO launch guide](docs/seo-launch.md) for the 12 public pages, validation commands, search intent map, and Google/Bing indexing workflow. Set the production origin with NEXT_PUBLIC_SITE_URL; see .env.example.
+See [SEO launch guide](docs/seo-launch.md) for the 13 public pages, validation commands, search intent map, and Google/Bing indexing workflow. Set the production origin with NEXT_PUBLIC_SITE_URL; see .env.example.

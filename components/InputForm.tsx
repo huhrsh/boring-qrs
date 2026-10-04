@@ -244,6 +244,21 @@ export default function InputForm({
 
         {showAdvanced && (
           <div className="w-full mt-4 space-y-4 animate-in slide-in-from-top">
+            <fieldset className="rounded-xl border border-indigo-200 bg-indigo-50 p-4 text-gray-900">
+              <legend className="px-1 text-sm font-bold">Quick photo styles</legend>
+              <div className="flex flex-wrap gap-2">
+                {([
+                  { name: 'Balanced portrait', strength: 0.55, mode: 'grayscale', dithering: false },
+                  { name: 'Color landscape', strength: 0.65, mode: 'color', dithering: false },
+                  { name: 'Dithered artwork', strength: 0.5, mode: 'grayscale', dithering: true },
+                ] as const).map(preset => <button key={preset.name} type="button" onClick={() => {
+                  onStrengthChange(preset.strength)
+                  onColorModeChange(preset.mode)
+                  onDitheringChange(preset.dithering)
+                }} className="rounded-lg border border-indigo-300 bg-white px-3 py-2 text-xs font-semibold hover:bg-indigo-100">{preset.name}</button>)}
+              </div>
+              <p className="mt-3 text-xs">Starting points for your uploaded photo. You can adjust every setting; test the result before printing.</p>
+            </fieldset>
             {/* Image Strength Slider */}
             <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl p-4 sm:p-5 border-2 border-cyan-200">
               <label htmlFor="strength" className="block text-sm font-bold text-gray-900 mb-3">

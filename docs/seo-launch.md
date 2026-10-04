@@ -16,6 +16,7 @@ These are editorial targets, not measured keyword volumes.
 
 | Path | Intent |
 | --- | --- |
+| /fancy-qr-code-generator | Photo-based fancy QR editor and design comparison |
 | / | Free photo / artistic QR code generator |
 | /qr-code-with-image | Blend an existing photo into a QR pattern |
 | /portrait-qr-code | Face and portrait QR designs |
@@ -51,5 +52,7 @@ Production deployment, Search Console submission, real-phone scanning and deploy
 
 
 ## Local verification results
-Production build and TypeScript passed. SEO output checks passed for all 12 public pages. HTTP checks passed for all pages, robots, sitemap, llms.txt and the social PNG; an unknown URL returned 404. Desktop and 390px mobile homepage layouts were inspected with no horizontal overflow. Browser checks confirmed plain QR generation, local image upload and the image-blended preview. Calculator checks confirmed 900px at 300 DPI = 3.00 inches / 7.62 cm, and zero input produces validation text. PNG download was invoked, but the browser automation did not capture a download event, so saved-file delivery remains unverified. No browser errors were reported. Lint passed with two existing warnings in ImagePreview.tsx and QRCanvas.tsx.
+Production build and TypeScript passed. SEO output checks passed for all 13 public pages. HTTP checks passed for all pages, robots, sitemap, llms.txt and the social PNG; an unknown URL returned 404. Desktop and 390px mobile homepage layouts were inspected with no horizontal overflow. Browser checks confirmed plain QR generation, local image upload and the image-blended preview. Calculator checks confirmed 900px at 300 DPI = 3.00 inches / 7.62 cm, and zero input produces validation text. PNG download was invoked, but the browser automation did not capture a download event, so saved-file delivery remains unverified. No browser errors were reported. Lint passed with two existing warnings in ImagePreview.tsx and QRCanvas.tsx.
 
+
+The competitor follow-up adds an embedded editor on /qr-code-with-image and /fancy-qr-code-generator, plus three photo-style presets. See competitor-review.md for the dated query observations, first-party sources, reasoning limits and remaining product opportunities.
